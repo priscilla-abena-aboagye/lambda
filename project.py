@@ -8,7 +8,7 @@ def print_expenses(expenses):
 
 
 def total_expenses(expense):
-    return sum(map(lambda expense: expense["amount"], expenses))
+    return sum(map(lambda expense: expense["amount"], expense))
 
 
 def filter_expenses_by_category(expenses, category):
@@ -38,3 +38,11 @@ def main():
         elif choice == "4":
             category = input("Enter category to filter: ")
             print(f"\nExpenses for {category}")
+            expenses_from_category = filter_expenses_by_category(expenses, category)
+            print_expenses(expenses_from_category)
+        elif choice =='5':
+            print("Exiting the program")
+            break
+
+
+main()
